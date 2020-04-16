@@ -1,7 +1,8 @@
 provider "github" {
   token        = var.github_token != "" ? var.github_token : null
   organization = var.github_organization
-	anonymous    = var.github_token == ""
+  anonymous    = var.github_token == ""
+  individual   = var.github_organization == ""	
 }
 
 resource "github_repository_webhook" "default" {
